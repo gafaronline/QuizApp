@@ -1,0 +1,472 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(227, 226, 223, .3)
+}
+
+/* Start landing section */
+section.landing-page-container{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+div.landing-page-wrapper{
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.5), url(images/images.jpg), no-repeat, center);
+    font-family: sans-serif;
+    height: 90vh;
+    width: 95%;
+    margin: 5vh 2.5%;
+    position: relative;
+    box-shadow: 15px 15px 35px #999;
+    background-size: cover;
+    border-radius: 3px;
+    animation: fade .8s;
+}
+
+h1#landing-page-heading{
+    text-align: center;
+    font-size: 55px;
+    color: #eee;
+    text-shadow: 1px 1px 5px #555;
+    letter-spacing: 3px;
+    padding-top: 60px;
+}
+div.landing-inputs-wrapper{
+    clip-path: polygon(100% 34%, 100% 35%, 100% 100%, 0 100%, 0 7%);
+    background: rgba(0,0,0,0.7);
+    padding: 220px 10px 10px 10px;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 3px;
+    margin-top: 100px;
+    animation: fade 1.5s;
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+div.landing-inputs-wrapper input{
+    width: 300px;
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 15px 10px;
+    margin: 10px auto;
+    background: transparent;
+    border-radius: 3px;
+    color: #eee;
+    outline: none;
+    border-color: transparent;
+    border-bottom: 2px solid #aaa;
+    transition: all .3s;
+    display: block;
+}
+
+div.landing-inputs-wrapper input::-webkit-input-placeholder{
+    color: #aaa;
+}
+div.landing-inputs-wrapper input::-moz-placeholder{
+    color: #aaa;
+}
+div.landing-inputs-wrapper input:focus{
+    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+start-quiz-btn:hover{
+    border: 2px solid #fff;
+    color: #fff;
+    transform: translateX(-1px);
+}
+/* End landing section */
+
+/* start admin section */
+section.admin-panel-container{
+    height: 90vh;
+    width: 95%;
+    margin: 5vh 2.5%;
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.3), rgba(0,0,0,0.7), url("an-image"), no-repeat, center);
+    box-shadow: 15px 15px 35px #999;
+    background-size: cover;
+    overflow: hidden;
+    animation: fade 0.8s;
+}
+div.admin-panel-wrapper{
+    width: 60%;
+    height: 65%;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 3px;
+    overflow: auto;
+}
+div.admin-panel-wrapper::-webkit-scrollbar{
+    background: rgba(0, 0, 0, 0.2);
+    width: 15px;
+}
+div.admin-panel-wrapper::-webkit-scrollbar-thumb{
+    background-color: #333;
+}
+div.header{
+    overflow: hidden;
+}
+div.header h2{
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: left;
+    width: 50%;
+    float: left;
+    padding: 20px;
+    color: #fff;
+}
+div.forms-wrapper{
+    width: 80%;
+    margin: 1% auto;
+}
+#new-question-text{
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #eee;
+    max-width: 500px;
+    min-width: 300px;
+    width: 50%;
+    height: 60px;
+    border-radius: 2px;
+    border: 0.5px solid #eee;
+    display: block;
+    margin: 10px 0 10px 80px;
+    padding: 7px;
+    outline: none;
+    background: #444;
+    transition: all .5s;
+}
+#new-question-text:focus{
+    border: .5px solid #3b8beb;
+    background: #555;
+}
+div.admin-option-wrapper{
+    position: relative;
+    width: 70%;
+}
+div.forms-wrapper input[type='text']{
+    width: 300px;
+    font-family: sans-serif;
+    font-size: 17px;
+    color: #eee;
+    display: block;
+    margin: 10px 0 10px 80px;
+    padding: 10px 5px;
+    border-radius: 2px;
+    border: 0.5px solid #eee;
+    outline: none;
+    background: #444;
+    animation: fade 0.5s;
+    transition: all 0.5s;
+}
+div.forms-wrapper input[type='text']:focus{
+    border: 0.5px solid #3b8beb;
+    background: #555;
+}
+div.forms-wrapper input[type='radio']{
+    position: absolute;
+    left: 60px;
+    top: 15px;
+}
+#question-insert-btn{
+    font-family: sans-serif;
+    margin-left: 80px;
+    padding: 10px 10px;
+    width: 120px;
+    color: #eee;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    background: #222;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid #ccc;
+    transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+}
+#question-insert-btn:hover{
+    color: #eee;
+    border: 1px solid #fff;
+    background: #555;
+}
+#admin-logout-btn{
+    font-family: sans-serif;
+    font-size: 15px;
+    float: right;
+    margin: 20px;
+    background-color: #222;
+    border-radius: 25px;
+    width: 110px;
+    letter-spacing: 1.5px;
+    color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s;
+}
+admin-logout-btn:hover{
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #555;
+}
+#question-clear-btn{
+    letter-spacing: 1.5px;
+    font-family: sans-serif;
+    color: #eee;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 25px;
+    width: 120px;
+    background: #222;
+    position: absolute;
+    right: 150px;
+    bottom: 20px;
+    border: 1px;
+    outline: none;
+    transition: all 0.3s;
+}
+#question-clear-btn:hover{
+    border: 1px solid #fff;
+    background: #555;
+}
+#question-update-btn{
+    font-family: sans-serif;
+    padding: 10px;
+    margin-left: 80px;
+    width: 110px;
+    color: #eee;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    background: #222;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    visibility: hidden;
+    transition: background 0.3s, border 0.3s box-shadow 0.3s;
+}
+#question-delete-btn:hover{
+    border: 1px solid #fff;
+    background: #555;
+}
+div.inserted-questions-wrapper{
+    padding: 10px 0;
+    width: 60%;
+    height: 20%;
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    background: rgba(0,0,0,0.65);
+    border-radius: 3px;
+    overflow: auto;
+}
+div.inserted-questions-wrapper:::-webkit-scrollbar{
+    background: rgba(0,0,0,0.2);
+    width: 15px;
+}
+div.inserted-questions-wrapper:::-webkit-scrollbar-thumb{
+    background-color: #333;
+}
+div.inserted-questions-wrapper p{
+    color: #eee;
+    background: #444;
+    padding: 6px 10px;
+    width: 92%;
+    margin: 5px auto;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    transition: background 0.3s;
+}
+div.inserted-questions-wrapper p:hover{
+    border: 1px solid #fff;
+    background: #555;
+}
+div.inserted-questions-wrapper p span{
+    font-family: sans-serif;
+    font-size: 16px;
+}
+div.inserted-questions-wrapper p button{
+    font-family: sans-serif;
+    float: right;
+    color: #eee;
+    padding: 4px 10px;
+    margin-top: -4px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    letter-spacing: 1.5px;
+    background-color: #222;
+    transition: all 0.3s;
+}
+div.inserted-questions-wrapper p button:hover{
+    background: #777;
+    border: 1px solid #fff;
+}
+div.results-list-container{
+    width: 30%;
+    position: absolute;
+    height: 90%;
+    right: 35px;
+    top: 5%;
+    background: rgba(0,0,0,0.65);
+    border-radius: 3px;
+    overflow: auto;
+}
+.clear{
+    overflow: hidden;
+}
+div.results-list-container h2{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #eee;
+    text-align: left;
+    float: left;
+    padding: 20px;
+}
+results-clear-btn{
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    float: right;
+    margin: 10px;
+    color: #eee;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 25px;
+    width: 130px;
+    background: #222;
+    outline: none;
+    border: 1px solid #ccc;
+    transition: all .3s;
+}
+results-clear-btn:hover{
+    border: 1px solid #fff;
+    background: #555;
+    color: #fff;
+}
+div.results-list-container::-webkit-scrollbar{
+    background: rgba(0, 0, 0, 0.2);
+    width: 15px;
+}
+div.results-list-container::-webkit-scrollbar-thumb{
+    background-color: #333;
+}
+div.results-list-container p {
+    font-family: sans-serif;
+    width: 90%;
+    padding: 5px;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    text-transform: capitalize;
+    overflow: hidden;
+    color: #eee;
+    background: #444;
+    transition: background 0.3s, border 0.3s;
+}
+div.results-list-container p:hover {
+    border: 1px solid #eee;
+    background: #555;
+}
+div.results-list-container p span{
+    margin: 5px;
+    float: left;
+    font-size: 17px;
+}
+.delete-result-btn{
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    display: block;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: #eee;
+    background: #222;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: background 0.3s, border 0.3s;
+}
+.delete-result-btn:hover{
+    background: #777;
+    border: 1px solid #fff;
+}
+
+/* start quiz section */
+section.quiz-container{
+    height: 90vh;
+    width: 95%;
+    margin: 5vh 2.5%;
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.35), rgba(0,0,0,0.75), url("an-image"), no-repeat, center);
+    box-shadow: 0px 10px 25px #aaa;
+    background-size: cover;
+    overflow: hidden;
+    animation: fade 0.8s;
+}
+div.quiz-wrapper{
+    position: absolute;
+    width: 60%;
+    height: 80vh;
+    background: rgba(0,0,0,0.65);
+    margin: 5vh 5% 5vh 3%;
+    border-radius: 3px;
+    overflow: auto;
+}
+div.quiz-wrapper::-webkit-scrollbar{
+    background: rgba(0, 0, 0, 0.2);
+    width: 15px;
+}
+div.quiz-wrapper::-webkit-scrollbar-thumb{
+    background-color: #333;
+}
+h2#asked-question-text{
+    font-family: sans-serif;
+    color: #eee;
+    text-indent: 15px;
+    font-size: 26px;
+    width: 90%;
+    margin: 30px auto 10px auto;
+}
+div#instant-answer-wrapper{
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+}
+div#instant-answer-wrapper::before{
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0;
+    z-index: 1;
+    left: 43px;
+    bottom: 16px;
+    border: medium solid white;
+    border-width: 8px 8px 8px 0;
+    border-color: transparent #eee transparent transparent;
+}
+#emotion{
+    display: block;
+    float: left;
+    margin: 14px 15px;
+}
+div.red{
+    border: 1px solid #e62739;
+    background-color: rgba(250,0,0,0.3);
+}
+div.green{
+    border: 1px solid #4caf50;
+    background-color: rgba(0,250,0,0.2);
+}
