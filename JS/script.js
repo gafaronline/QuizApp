@@ -46,12 +46,17 @@ let quizController = (function(){
         }
     }
     return{
+        getQuestionLocalStorage: questionLocalStorage,
+
         addQuestionOnLocalStorage:  function(newQuestionText, opts){
             let optionsArr, corrAns, questionId, newQuestion, getStoredQuests, isChecked;
 
             if(questionLocalStorage.getQuestionCollection() === null){
-                questionLocalStorage.setQuestionCollection([]);
+                questionLocalStorage.setQuestionCollection([])
             }
+
+            if(questionLocalStorage.getQuestionCollection() === null){
+                questionLocalStorage.setQuestionCollection([])
 
             optionsArr = [];
             isChecked = false;
@@ -106,7 +111,8 @@ let quizController = (function(){
                 alert('please insert question');
             }
         }
-    };
+    }
+}
 })();
 
 /******************************************************** */
@@ -126,7 +132,8 @@ let UIController = (function(){
         questionInsertBtn: document.getElementById('question-insert-btn'),
         newQuestionText: document.getElementById('new-question-text'),
         adminOptions: document.querySelectorAll('.admin-option'),
-        adminOptionsContainer: document.querySelector('.admin-options-container')
+        adminOptionsContainer: document.querySelector('.admin-options-container'),
+        insertedQuestionWrapper: document.querySelector('.inserted-questions-wrapper')
     }
 
     return{
@@ -149,6 +156,20 @@ let UIController = (function(){
 
             domItems.adminOptionsContainer.lastElementChild.lastElementChild.addEventListener('focus', addInput);
             
+        }, 
+        createQuestionList: function(getQuestion){
+            // console.log(getQuestions);
+            let questHTML;
+            domItems.insertedQuestionWrapper.innerHTML = "";
+            for(var i=0; i< getQuestion.getQuestionCollection().length; i++){
+
+                numberingArray.push(i+1);
+                questHTML = ' <p><span>'+numberingArray+ '.'+ getQuestionCollection()[i].questionText +'</span><button id="question-"'+ getQuestion.getQuestionCollection()[i].id +'>edit</button></p>';
+
+                console.log(getQuestion.getQuestionCollection()[i]);
+                domItems.insertedQuestionWrapper.insertAdjacentHTML('afterbegin', questHTML);
+            }
+
         }
     }
 })();
@@ -161,6 +182,9 @@ let controller = (function(quizCtrl, UICtrl){
     let selectedDomItems = UICtrl.getDomItems;     // In order to keep the code clean and make things simple, since we'll be referencing UICtrl.getDomItems many times, it is better to have it as a variable and just always call it when needed.
 
     UICtrl.addInputDynamically();
+
+    UICtrl.createQuestionList(quizCtrl.getQuestionLocalStorage);
+
     selectedDomItems.questionInsertBtn.addEventListener('click', function(){
 
         let adminOptions =document.querySelectorAll('.admin-option');
